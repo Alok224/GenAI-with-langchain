@@ -1,0 +1,31 @@
+# Don't track environment variables
+.env
+.env.*
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+langenv/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Chroma.db
+Faiss.db
+
+# Streamlit generated files
+.streamlit/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Log files
+*.log
+".env" 
