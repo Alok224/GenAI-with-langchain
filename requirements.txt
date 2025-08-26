@@ -20,5 +20,14 @@ langchain_groq
 uvicorn
 sse-starlette
 langserve
-pydantic<2.0
+pydantic>=2.0
 fastapi==0.110.0
+mysql-connector-python
+langchain-mysql
+SQLAlchemy
+validators==0.28.1
+youtube-transcript-api
+unstructured
+pytube
+numexpr
+duckduckgo-search
