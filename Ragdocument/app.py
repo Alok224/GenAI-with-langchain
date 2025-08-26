@@ -20,6 +20,7 @@ load_dotenv()
 os.environ['OLLAMA_API_KEY'] = os.getenv('OLLAMA_API_KEY')
 os.environ["USER_AGENT"] = "GenAI-with-langchain/1.0"
 os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
+os.environ['HUGGINGFACE_API_KEY'] = os.getenv('HUGGINGFACE_API_KEY')
 
 # you can also get your api key
 groq_api_key = os.getenv("GROQ_API_KEY")
