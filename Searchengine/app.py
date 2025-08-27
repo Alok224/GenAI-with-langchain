@@ -22,6 +22,8 @@ from langchain.agents.initialize import initialize_agent
 from langchain.agents.agent_types import AgentType
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
+from langchain.agents import create_openai_tools_agent
+from langchain.agents import AgentExecutor
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -56,7 +58,7 @@ if prompt:
 
         llm = ChatGroq(model_name = "Llama3-8b-8192", groq_api_key=api_key,streaming=True)
         tools = [arxiv, wiki, search]
-        search_agent = initialize_agent(tools,llm,agent = AgentType.ZERO_SHOT_REACT_DESCRIPTION,verbose = True,handling_passing_errors = True)
+        search_agent = initialize_agent(tools,llm,agent = AgentType.ZERO_SHOT_REACT_DESCRIPTION,verbose = True,handle_parsing_errors=True)
         with st.chat_message("assistant"):
             streamlit_cb = StreamlitCallbackHandler(st.container(), expand_new_thoughts = True)
             response = search_agent.run(st.session_state.messages,callbacks = [streamlit_cb])
